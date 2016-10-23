@@ -1,4 +1,4 @@
-package com.example.grupo8webir.myapplication.api;
+package com.example.grupo8webir.WhereToGo.api;
 
 import com.loopj.android.http.*;
 
