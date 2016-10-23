@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.example.grupo8webir.myapplication"
+        applicationId "com.example.grupo8webir.WhereToGo"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1

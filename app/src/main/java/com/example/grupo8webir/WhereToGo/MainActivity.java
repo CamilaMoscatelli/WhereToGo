@@ -1,4 +1,4 @@
-package com.example.grupo8webir.myapplication;
+package com.example.grupo8webir.WhereToGo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
