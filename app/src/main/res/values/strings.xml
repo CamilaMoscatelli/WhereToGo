@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Where to go</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="startImageView">startImageView</string>
+    <string name="startAppButton">GO FIND!</string>
+    <string name="title_activity_filters">FiltersActivity</string>
+    <string name="title_activity_results">resultsActivity</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+
 </resources>
