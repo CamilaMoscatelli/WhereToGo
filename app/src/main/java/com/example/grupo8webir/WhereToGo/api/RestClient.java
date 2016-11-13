@@ -7,7 +7,7 @@ import com.loopj.android.http.*;
  */
 public class RestClient {
 
-    private static final String BASE_URL = "https://api.where2go.com/v1/";
+    private static final String BASE_URL = "http://where-to-go-be.herokuapp.com/api/";
 
     private static AsyncHttpClient client = new AsyncHttpClient();
 
