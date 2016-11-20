@@ -31,10 +31,9 @@ public class ResultsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_results);
 
         /*
-        Assigning view variables to thier respective view in xml
+        Assigning view variables to their respective view in xml
         by findViewByID method
          */
-
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -53,35 +52,32 @@ public class ResultsActivity extends AppCompatActivity {
         TabLayout.newTab() method creates a tab view, Now a Tab view is not the view
         which is below the tabs, its the tab itself.
          */
-
-        final TabLayout.Tab home = tabLayout.newTab();
-        final TabLayout.Tab inbox = tabLayout.newTab();
-        final TabLayout.Tab star = tabLayout.newTab();
+        final TabLayout.Tab cine = tabLayout.newTab();
+        final TabLayout.Tab teatro = tabLayout.newTab();
+        final TabLayout.Tab musica = tabLayout.newTab();
 
         /*
         Setting Title text for our tabs respectively
          */
-
-        home.setText("Home");
-        inbox.setText("Inbox");
-        star.setText("Star");
+        cine.setText("Cine");
+        teatro.setText("Teatro");
+        musica.setText("Música");
 
         /*
-        Adding the tab view to our tablayout at appropriate positions
+        Adding the tab view to our tablelyout at appropriate positions
         As I want home at first position I am passing home and 0 as argument to
-        the tablayout and like wise for other tabs as well
+        the tablelyout and like wise for other tabs as well
          */
-        tabLayout.addTab(home, 0);
-        tabLayout.addTab(inbox, 1);
-        tabLayout.addTab(star, 2);
+        tabLayout.addTab(cine, 0);
+        tabLayout.addTab(teatro, 1);
+        tabLayout.addTab(musica, 2);
 
         /*
         TabTextColor sets the color for the title of the tabs, passing a ColorStateList here makes
         tab change colors in different situations such as selected, active, inactive etc
 
-        TabIndicatorColor sets the color for the indiactor below the tabs
+        TabIndicatorColor sets the color for the indicator below the tabs
          */
-
         tabLayout.setTabTextColors(ContextCompat.getColorStateList(this, R.drawable.tab_selector));
         tabLayout.setSelectedTabIndicatorColor(ContextCompat.getColor(this, R.color.indicator));
 
@@ -90,8 +86,30 @@ public class ResultsActivity extends AppCompatActivity {
         1st we add the PageChangeListener and pass a TabLayoutPageChangeListener so that Tabs Selection
         changes when a viewpager page changes.
          */
-
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position){
+                    case 0:
+                        //TODO
+                        //ask for data and reload table
+                        break;
+                    case 1:
+                        //TODO
+                        break;
+                    case 2:
+                        //TODO
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {}
+        });
     }
 
     @Override
