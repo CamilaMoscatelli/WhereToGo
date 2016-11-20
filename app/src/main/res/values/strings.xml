@@ -5,8 +5,6 @@
     <string name="startImageView">startImageView</string>
     <string name="startAppButton">GO FIND!</string>
     <string name="title_activity_filters">FiltersActivity</string>
-    <string name="title_activity_results">resultsActivity</string>
-
-    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_results">Events</string>
 
 </resources>
