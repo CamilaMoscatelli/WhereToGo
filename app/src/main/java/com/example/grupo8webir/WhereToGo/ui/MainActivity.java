@@ -43,4 +43,10 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void goToFilters(View view){
+        //TODO
+        Intent intent = new Intent(this, filtros.class);
+        startActivity(intent);
+    }
 }
