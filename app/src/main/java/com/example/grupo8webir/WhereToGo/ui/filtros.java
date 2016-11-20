@@ -3,7 +3,6 @@ package com.example.grupo8webir.WhereToGo.ui;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.grupo8webir.WhereToGo.R;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
@@ -13,6 +12,8 @@ import android.widget.DatePicker;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import com.example.grupo8webir.WhereToGo.R;
 
 import java.util.Calendar;
 

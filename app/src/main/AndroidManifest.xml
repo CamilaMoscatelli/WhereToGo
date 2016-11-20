@@ -20,11 +20,12 @@
         </activity>
         <activity
             android:name=".ui.resultsActivity"
-            android:label="@string/title_activity_results"></activity>
+            android:label="@string/title_activity_results" />
         <activity
             android:name=".ui.ResultsActivity"
-            android:label="@string/title_activity_results"></activity>
-        <activity android:name=".ui.filtros"></activity>
+            android:label="@string/title_activity_results" />
+        <activity android:name=".ui.filtros" />
+        <activity android:name=".ui.dPeliculas"></activity>
     </application>
 
 </manifest>
