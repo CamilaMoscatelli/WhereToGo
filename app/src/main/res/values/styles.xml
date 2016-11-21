@@ -20,4 +20,13 @@
     <style name="ToolBarStyle" parent="Widget.AppCompat.Toolbar">
         <item name="actionMenuTextColor">@android:color/white</item>
     </style>
+
+    <style name="filter_button_text" >
+        <item name="android:layout_width" >wrap_content</item>
+        <item name="android:layout_height" >wrap_content</item>
+        <item name="android:textColor" >@color/PrimaryColor</item>
+        <item name="android:gravity" >center</item>
+        <item name="android:layout_margin" >10dp</item>
+        <item name="android:textSize" >16sp</item>
+    </style>
 </resources>

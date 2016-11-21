@@ -36,7 +36,8 @@
         <activity
             android:name=".ui.ResultsActivity"
             android:label="@string/title_activity_results"></activity>
-        <activity android:name=".ui.filtros"></activity>
+        <activity android:name=".ui.filtros">
+            android:label="@string/title_activity_filters"></activity>
         <activity
             android:name=".ui.MapActivity">
         </activity>
