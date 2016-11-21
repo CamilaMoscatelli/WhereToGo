@@ -134,7 +134,7 @@ public class filtros extends AppCompatActivity {
                 }
             };
 
-    public void goToFilters(View view){
+    public void goToResults(View view){
         //TODO
         Intent intent = new Intent(this, ResultsActivity.class);
         startActivity(intent);
