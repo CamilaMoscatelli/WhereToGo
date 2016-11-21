@@ -41,6 +41,6 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
 
-    /* Enabling multidex*/
+    /*Enabling multidex*/
     compile 'com.android.support:multidex:1.0.1'
 }

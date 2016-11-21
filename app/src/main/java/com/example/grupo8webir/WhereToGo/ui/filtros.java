@@ -1,5 +1,6 @@
 package com.example.grupo8webir.WhereToGo.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -132,4 +133,10 @@ public class filtros extends AppCompatActivity {
                     horaSelect.setText(textohora + " : "+ textominutos);
                 }
             };
+
+    public void goToFilters(View view){
+        //TODO
+        Intent intent = new Intent(this, ResultsActivity.class);
+        startActivity(intent);
+    }
 }
