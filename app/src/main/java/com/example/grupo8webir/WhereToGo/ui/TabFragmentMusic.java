@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.grupo8webir.WhereToGo.R;
@@ -46,6 +47,8 @@ public class TabFragmentMusic extends Fragment {
         //Get ListView from activity_main.xml
         ListView listView = (ListView) view.findViewById(R.id.resultsListView);
 
+        listView.setItemsCanFocus(true);
+
         // Set ListAdapter
         listView.setAdapter(adapter);
         this.adapter = adapter;
@@ -53,12 +56,4 @@ public class TabFragmentMusic extends Fragment {
         return view;
     }
 
-    //TODO check
-    public static void reloadData(ArrayList<Event> events) {
-        // update data in our adapter
-        adapter.clear();
-        adapter.addAll(events);
-        // fire the event
-        adapter.notifyDataSetChanged();
-    }
 }

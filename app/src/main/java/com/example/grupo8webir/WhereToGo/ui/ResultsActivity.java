@@ -98,6 +98,8 @@ public class ResultsActivity extends AppCompatActivity {
         changes when a viewpager page changes.
          */
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        //TODO
+        /*
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -123,6 +125,7 @@ public class ResultsActivity extends AppCompatActivity {
             public void onPageScrollStateChanged(int state) {
             }
         });
+        */
 
         //TODO
         toolbar = (Toolbar) findViewById(R.id.tool_bar);

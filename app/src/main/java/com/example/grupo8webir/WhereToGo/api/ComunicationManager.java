@@ -36,7 +36,6 @@ public class ComunicationManager {
             @Override
             public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
                 List<Event> movies = response.body();
-                //TODO delete TabFragmentMovies.reloadData((ArrayList<Event>) movies);
                 filtros.goToResultsIfLoaded("Movies", (ArrayList<Event>) movies);
                 Log.d("", "Number of movies received: " + movies.size());
             }
@@ -47,14 +46,45 @@ public class ComunicationManager {
                 Log.e("", t.toString());
             }
         });
-
     }
 
     public void getPlays() {
-        filtros.goToResultsIfLoaded("Theatre", new ArrayList<Event>());
+        ApiInterface apiService = RestClient.getClient().create(ApiInterface.class);
+
+        Call<List<Event>> call = apiService.getPlays();
+        call.enqueue(new Callback<List<Event>>() {
+            @Override
+            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+                List<Event> plays = response.body();
+                filtros.goToResultsIfLoaded("Theatre", (ArrayList<Event>) plays);
+                Log.d("", "Number of movies received: " + plays.size());
+            }
+
+            @Override
+            public void onFailure(Call<List<Event>> call, Throwable t) {
+                filtros.goToResultsIfLoaded("Theatre", new ArrayList<Event>());
+                Log.e("", t.toString());
+            }
+        });
     }
 
     public void getConcerts() {
-        filtros.goToResultsIfLoaded("Music", new ArrayList<Event>());
+        ApiInterface apiService = RestClient.getClient().create(ApiInterface.class);
+
+        Call<List<Event>> call = apiService.getConcerts();
+        call.enqueue(new Callback<List<Event>>() {
+            @Override
+            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+                List<Event> concerts = response.body();
+                filtros.goToResultsIfLoaded("Music", (ArrayList<Event>) concerts);
+                Log.d("", "Number of movies received: " + concerts.size());
+            }
+
+            @Override
+            public void onFailure(Call<List<Event>> call, Throwable t) {
+                filtros.goToResultsIfLoaded("Music", new ArrayList<Event>());
+                Log.e("", t.toString());
+            }
+        });
     }
 }
