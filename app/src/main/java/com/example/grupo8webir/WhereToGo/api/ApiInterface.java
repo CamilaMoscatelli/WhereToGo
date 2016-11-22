@@ -21,8 +21,8 @@ public interface ApiInterface {
     Call<List<Event>> getMovies();
 
     @GET("theater")
-    Call<EventResponse> getPlays();
+    Call<List<Event>> getPlays();
 
     @GET("music")
-    Call<EventResponse> getConcerts();
+    Call<List<Event>> getConcerts();
 }

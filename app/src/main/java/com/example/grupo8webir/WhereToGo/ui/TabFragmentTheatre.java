@@ -1,5 +1,6 @@
 package com.example.grupo8webir.WhereToGo.ui;
 
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -19,23 +20,26 @@ import java.util.ArrayList;
  * Created by Camila on 13/11/2016.
  */
 
-public class TabFragment extends Fragment {
+public class TabFragmentTheatre extends Fragment {
 
     private static CustomAdapter adapter;
-    private Integer tabPosition;
-    private ArrayList<Event> eventList = new ArrayList<Event>();
+    private ArrayList<Event> theatreEvents = new ArrayList<Event>();
 
-    public static TabFragment newInstance(int tab) {
-        TabFragment myFragment = new TabFragment();
-        myFragment.tabPosition = tab;
+    public static TabFragmentTheatre newInstance(ArrayList<Event> theatreEvents) {
+        TabFragmentTheatre myFragment = new TabFragmentTheatre();
+        myFragment.init(theatreEvents);
 
         return myFragment;
     }
 
+    public void init(ArrayList<Event> list) {
+        this.theatreEvents = list;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-         //Pass context and data to the custom adapter
-        CustomAdapter adapter = new CustomAdapter(getContext(), getEventsForTab(tabPosition));
+        //Pass context and data to the custom adapter
+        CustomAdapter adapter = new CustomAdapter(getContext(), theatreEvents);
 
         //Fragment view
         View view = inflater.inflate(R.layout.tabs, container, false);
@@ -48,22 +52,6 @@ public class TabFragment extends Fragment {
         this.adapter = adapter;
 
         return view;
-    }
-
-    private ArrayList<Event> getEventsForTab(Integer tab) {
-        switch (tab) {
-            case 0:
-                ComunicationManager.getInstance().getMovies();
-                break;
-            case 1:
-                eventList.add(new Event("Spiderman","Second Item on the list"));
-                break;
-            case 2:
-                eventList.add(new Event("Superman", "Third Item on the list"));
-                break;
-        }
-
-        return eventList;
     }
 
     //TODO check

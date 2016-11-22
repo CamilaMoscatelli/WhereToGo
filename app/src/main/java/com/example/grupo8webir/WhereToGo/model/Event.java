@@ -26,6 +26,12 @@ public class Event {
         this.synopsis = synopsis;
     }
 
+    public Event(String title, String synopsis, String poster_url) {
+        this.title = title;
+        this.synopsis = synopsis;
+        this.poster_url = poster_url;
+    }
+
     public Event(String title, String poster_url) {
         this.title = title;
         this.poster_url = poster_url;

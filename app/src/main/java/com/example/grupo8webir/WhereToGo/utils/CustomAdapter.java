@@ -3,6 +3,7 @@ package com.example.grupo8webir.WhereToGo.utils;
 import java.util.ArrayList;
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +49,16 @@ public class CustomAdapter extends ArrayAdapter<Event> {
         Picasso.with(this.getContext())
                 .load(itemsArrayList.get(position).getPoster_url())
                 .into(bannerView);
+
+        rowView.setClickable(true);
+        rowView.setFocusable(true);
+        rowView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(context).setTitle("touched").show();
+            }
+
+        });
 
         // 5. return rowView
         return rowView;

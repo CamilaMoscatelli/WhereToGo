@@ -15,8 +15,14 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.grupo8webir.WhereToGo.R;
+import com.example.grupo8webir.WhereToGo.model.Event;
+import com.example.grupo8webir.WhereToGo.utils.EventsHolder;
+import com.google.android.gms.games.event.Events;
+
+import java.util.ArrayList;
 
 public class ResultsActivity extends AppCompatActivity {
 
@@ -44,7 +50,12 @@ public class ResultsActivity extends AppCompatActivity {
         the default action bar thus making the toolbar work like a normal
         action bar.
          */
-        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        EventsHolder eventsHolder = EventsHolder.getInstance();
+        ArrayList<Event> musicEvents = eventsHolder.musicEvents;
+        ArrayList<Event> moviesEvents = eventsHolder.moviesEvents;
+        ArrayList<Event> theatreEvents = eventsHolder.theatreEvents;
+
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), moviesEvents, musicEvents, theatreEvents);
         viewPager.setAdapter(viewPagerAdapter);
         setSupportActionBar(toolbar);
 
@@ -87,13 +98,16 @@ public class ResultsActivity extends AppCompatActivity {
         changes when a viewpager page changes.
          */
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        //TODO
+        /*
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
 
             @Override
             public void onPageSelected(int position) {
-                switch (position){
+                switch (position) {
                     case 0:
                         //TODO
                         //ask for data and reload table
@@ -108,7 +122,24 @@ public class ResultsActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {}
+            public void onPageScrollStateChanged(int state) {
+            }
+        });
+        */
+
+        //TODO
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //do something you want
+                finish();
+            }
         });
     }
 
@@ -125,11 +156,6 @@ public class ResultsActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
