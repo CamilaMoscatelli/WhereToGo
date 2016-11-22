@@ -19,23 +19,26 @@ import java.util.ArrayList;
  * Created by Camila on 13/11/2016.
  */
 
-public class TabFragment extends Fragment {
+public class TabFragmentMusic extends Fragment {
 
     private static CustomAdapter adapter;
-    private Integer tabPosition;
-    private ArrayList<Event> eventList = new ArrayList<Event>();
+    private ArrayList<Event> musicEvents = new ArrayList<Event>();
 
-    public static TabFragment newInstance(int tab) {
-        TabFragment myFragment = new TabFragment();
-        myFragment.tabPosition = tab;
+    public static TabFragmentMusic newInstance(ArrayList<Event> musicEvents) {
+        TabFragmentMusic myFragment = new TabFragmentMusic();
+        myFragment.init(musicEvents);
 
         return myFragment;
     }
 
+    public void init(ArrayList<Event> list) {
+        this.musicEvents = list;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-         //Pass context and data to the custom adapter
-        CustomAdapter adapter = new CustomAdapter(getContext(), getEventsForTab(tabPosition));
+        //Pass context and data to the custom adapter
+        CustomAdapter adapter = new CustomAdapter(getContext(), musicEvents);
 
         //Fragment view
         View view = inflater.inflate(R.layout.tabs, container, false);
@@ -48,22 +51,6 @@ public class TabFragment extends Fragment {
         this.adapter = adapter;
 
         return view;
-    }
-
-    private ArrayList<Event> getEventsForTab(Integer tab) {
-        switch (tab) {
-            case 0:
-                ComunicationManager.getInstance().getMovies();
-                break;
-            case 1:
-                eventList.add(new Event("Spiderman","Second Item on the list"));
-                break;
-            case 2:
-                eventList.add(new Event("Superman", "Third Item on the list"));
-                break;
-        }
-
-        return eventList;
     }
 
     //TODO check

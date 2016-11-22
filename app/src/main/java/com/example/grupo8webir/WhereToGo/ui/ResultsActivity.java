@@ -18,6 +18,11 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.grupo8webir.WhereToGo.R;
+import com.example.grupo8webir.WhereToGo.model.Event;
+import com.example.grupo8webir.WhereToGo.utils.EventsHolder;
+import com.google.android.gms.games.event.Events;
+
+import java.util.ArrayList;
 
 public class ResultsActivity extends AppCompatActivity {
 
@@ -45,7 +50,12 @@ public class ResultsActivity extends AppCompatActivity {
         the default action bar thus making the toolbar work like a normal
         action bar.
          */
-        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        EventsHolder eventsHolder = EventsHolder.getInstance();
+        ArrayList<Event> musicEvents = eventsHolder.musicEvents;
+        ArrayList<Event> moviesEvents = eventsHolder.moviesEvents;
+        ArrayList<Event> theatreEvents = eventsHolder.theatreEvents;
+
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), moviesEvents, musicEvents, theatreEvents);
         viewPager.setAdapter(viewPagerAdapter);
         setSupportActionBar(toolbar);
 

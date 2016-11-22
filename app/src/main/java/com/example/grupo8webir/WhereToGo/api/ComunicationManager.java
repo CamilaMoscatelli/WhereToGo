@@ -4,7 +4,8 @@ import android.util.Log;
 
 import org.json.*;
 import com.example.grupo8webir.WhereToGo.model.Event;
-import com.example.grupo8webir.WhereToGo.ui.TabFragment;
+import com.example.grupo8webir.WhereToGo.ui.TabFragmentMovies;
+import com.example.grupo8webir.WhereToGo.ui.filtros;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,23 +36,25 @@ public class ComunicationManager {
             @Override
             public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
                 List<Event> movies = response.body();
-                TabFragment.reloadData((ArrayList<Event>) movies);
+                //TODO delete TabFragmentMovies.reloadData((ArrayList<Event>) movies);
+                filtros.goToResultsIfLoaded("Movies", (ArrayList<Event>) movies);
                 Log.d("", "Number of movies received: " + movies.size());
             }
 
             @Override
             public void onFailure(Call<List<Event>> call, Throwable t) {
+                filtros.goToResultsIfLoaded("Movies", new ArrayList<Event>());
                 Log.e("", t.toString());
             }
         });
 
     }
 
-    public void getPlays() throws JSONException {
-
+    public void getPlays() {
+        filtros.goToResultsIfLoaded("Theatre", new ArrayList<Event>());
     }
 
-    public void getConcerts() throws JSONException {
-
+    public void getConcerts() {
+        filtros.goToResultsIfLoaded("Music", new ArrayList<Event>());
     }
 }

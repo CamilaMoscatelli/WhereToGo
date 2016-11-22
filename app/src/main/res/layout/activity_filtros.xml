@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/botonFecha"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="32dp"
         style="@style/filter_button_text"
         android:layout_below="@+id/mostrarFecha"
         android:layout_centerHorizontal="true" />
@@ -84,13 +84,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/botonFecha"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:textSize="20sp"
         android:id="@+id/textView3"
         android:layout_alignStart="@+id/textView2" />
 
     <TextView
-        android:text=""
+        android:text="20:00"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -104,7 +104,7 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:id="@+id/mostrarFecha"
-        android:text="No especificado"
+        android:text="23/11/2016"
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
         android:layout_toRightOf="@id/textView2"
@@ -114,7 +114,7 @@
         android:text="Fecha:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="46dp"
         android:layout_marginLeft="22dp"
         android:id="@+id/textView2"
         android:textSize="20sp"
@@ -122,7 +122,7 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:text="Ver resultados"
+        android:text="Buscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/filter_button_text"
@@ -130,5 +130,15 @@
         android:onClick="goToResults"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:elevation="10dp"
+        android:visibility="gone"/>
 
 </RelativeLayout>
