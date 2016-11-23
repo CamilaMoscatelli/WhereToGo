@@ -3,4 +3,5 @@
     <color name="PrimaryColor">#2196F3</color>
     <color name="PrimaryDarkColor">#2e659b</color>
     <color name="indicator">#ecd95a</color>
+    <color name="white">#fff</color>
 </resources>

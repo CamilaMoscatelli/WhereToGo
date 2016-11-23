@@ -3,6 +3,7 @@ package com.example.grupo8webir.WhereToGo.ui;
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -69,7 +70,16 @@ public class MapActivity extends Activity implements OnMapReadyCallback {
         } else {
             // Show rationale and request permission.
         }
-        cargarMarkers();
+        //cargarMarkers();
+        Intent intent = getIntent();
+
+        Bundle b = getIntent().getExtras();
+        String name = b.getString("PLACE_NAME");
+        double lat = b.getDouble("PLACE_LAT");
+        double lng = b.getDouble("PLACE_LNG");
+
+        setMarker(name,lat,lng,"Este es el lugar del evento!");
+        goToLocationZoom(lat,lng, 14);
 
     }
 

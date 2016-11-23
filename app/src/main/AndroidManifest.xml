@@ -41,6 +41,9 @@
         <activity
             android:name=".ui.MapActivity">
         </activity>
+        <activity
+            android:name=".ui.dPeliculas">
+        </activity>
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyBay2PjQhAovphEuI8_imIks_mpl8Yy2zU" />
