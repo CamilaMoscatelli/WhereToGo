@@ -155,22 +155,6 @@ public class filtros extends AppCompatActivity {
             };
 
     public void goToResults(View view){
-        //TODO
-        /*
-        ArrayList<Event> eventList1 = new ArrayList<Event>();
-        eventList1.add(new Event("Spiderman", "First Item on the list"));
-        ArrayList<Event> eventList2 = new ArrayList<Event>();
-        eventList2.add(new Event("Superman", "Second Item on the list"));
-        ArrayList<Event> eventList3 = new ArrayList<Event>();
-        eventList3.add(new Event("Batman", "Third Item on the list"));
-
-        EventsHolder eventsHolder = EventsHolder.getInstance();
-        eventsHolder.musicEvents = eventList1;
-        eventsHolder.moviesEvents = eventList2;
-        eventsHolder.theatreEvents = eventList3;
-
-        Intent intent = new Intent(this, ResultsActivity.class);
-        startActivity(intent);*/
         spinner.setVisibility(View.VISIBLE);
         ComunicationManager cm = ComunicationManager.getInstance();
         cm.getMovies();

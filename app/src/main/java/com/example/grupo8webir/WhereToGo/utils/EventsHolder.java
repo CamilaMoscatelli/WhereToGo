@@ -1,6 +1,7 @@
 package com.example.grupo8webir.WhereToGo.utils;
 
 import com.example.grupo8webir.WhereToGo.model.Event;
+import com.example.grupo8webir.WhereToGo.model.Show;
 
 import java.util.ArrayList;
 
@@ -13,6 +14,8 @@ public class EventsHolder {
     public ArrayList<Event> moviesEvents;
     public ArrayList<Event> musicEvents;
     public ArrayList<Event> theatreEvents;
+
+    public Event selectedEvent;
 
     public static EventsHolder getInstance() {
         if (sInstance == null) {

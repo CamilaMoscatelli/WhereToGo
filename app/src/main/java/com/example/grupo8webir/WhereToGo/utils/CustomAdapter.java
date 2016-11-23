@@ -2,14 +2,15 @@ package com.example.grupo8webir.WhereToGo.utils;
 
 import java.util.ArrayList;
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.grupo8webir.WhereToGo.ui.dPeliculas;
 import com.squareup.picasso.Picasso;
 
 import com.example.grupo8webir.WhereToGo.R;
@@ -31,7 +32,7 @@ public class CustomAdapter extends ArrayAdapter<Event> {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         // 1. Create inflater
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -55,9 +56,13 @@ public class CustomAdapter extends ArrayAdapter<Event> {
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(context).setTitle("touched").show();
-            }
+                Event selectedEvent = (itemsArrayList.get(position));
+                EventsHolder eventsHolder = EventsHolder.getInstance();
+                eventsHolder.selectedEvent = selectedEvent;
 
+                Intent intent = new Intent(context, dPeliculas.class);
+                context.startActivity(intent);
+            }
         });
 
         // 5. return rowView

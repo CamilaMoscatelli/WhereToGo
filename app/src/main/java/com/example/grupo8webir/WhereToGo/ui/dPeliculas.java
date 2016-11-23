@@ -3,6 +3,7 @@ package com.example.grupo8webir.WhereToGo.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -27,6 +28,21 @@ public class dPeliculas extends AppCompatActivity {
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,datosShows);
         shows.setAdapter(adaptador);
 
+        //TODO
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        //TODO toolbar.setTitle("Filtros");
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //do something you want
+                finish();
+            }
+        });
     }
 
     public void irAlMapa(View view){

@@ -5,32 +5,28 @@ package com.example.grupo8webir.WhereToGo.model;
  */
 public class Show {
 
-    private String cinema_name;
-    private String date_to_display;
+    private String place;
+    private String date;
     private String time_to_display;
+    private Float lat;
+    private Float longitud;
     private Integer price_cents;
 
-    public Show(String cinema_name, Integer price_cents, String time_to_display, String date_to_display) {
-        this.cinema_name = cinema_name;
-        this.price_cents = price_cents;
+    public Show(String place, String date, String time_to_display, Float lat, Float longitud, Integer price_cents) {
+        this.place = place;
+        this.date = date;
         this.time_to_display = time_to_display;
-        this.date_to_display = date_to_display;
+        this.lat = lat;
+        this.longitud = longitud;
+        this.price_cents = price_cents;
     }
 
-    public String getCinema_name() {
-        return cinema_name;
+    public String getPlace() {
+        return place;
     }
 
-    public void setCinema_name(String cinema_name) {
-        this.cinema_name = cinema_name;
-    }
-
-    public String getDate_to_display() {
-        return date_to_display;
-    }
-
-    public void setDate_to_display(String date_to_display) {
-        this.date_to_display = date_to_display;
+    public void setPlace(String place) {
+        this.place = place;
     }
 
     public String getTime_to_display() {
@@ -39,6 +35,30 @@ public class Show {
 
     public void setTime_to_display(String time_to_display) {
         this.time_to_display = time_to_display;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public Float getLat() {
+        return lat;
+    }
+
+    public void setLat(Float lat) {
+        this.lat = lat;
+    }
+
+    public Float getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(Float longitud) {
+        this.longitud = longitud;
     }
 
     public Integer getPrice_cents() {

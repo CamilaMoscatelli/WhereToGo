@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToFilters(View view){
         //TODO
-        Intent intent = new Intent(this, dPeliculas.class);
+        Intent intent = new Intent(this, filtros.class);
         startActivity(intent);
     }
 }
