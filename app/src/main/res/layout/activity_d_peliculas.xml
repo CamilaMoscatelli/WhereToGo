@@ -9,11 +9,11 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:scrollbars = "vertical"
     tools:context="com.example.grupo8webir.WhereToGo.ui.dPeliculas">
 
 
     <TextView
-        android:text="Animales fantásticos y como encontrarlos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/pTitulo"
@@ -23,17 +23,15 @@
         android:textStyle="normal|bold" />
 
     <TextView
-        android:text="130 minutos"
         android:layout_height="wrap_content"
         android:id="@+id/pDuracion"
         android:textSize="22sp"
         android:layout_below="@+id/pTitulo"
         android:layout_alignParentStart="true"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:textStyle="normal|bold" />
 
     <TextView
-        android:text="Familiar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/pGenero"
@@ -51,7 +49,11 @@
         android:textSize="18sp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:onClick="irAlMapa"/>
+        android:background="@color/PrimaryColor"
+        android:onClick="irAlMapa"
+        android:paddingLeft="15dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" />
 
     <ImageView
         android:layout_width="match_parent"
@@ -61,17 +63,6 @@
         android:id="@+id/pImagen"
         android:layout_height="230dp" />
 
-    <TextView
-        android:text="En 1926 New Scamander se prepara para iniciar una excursión por todo el mundo en busca de una extraordinaria variedad de criaturas mágicas..."
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/pSynopsis"
-        android:textSize="20sp"
-        android:layout_below="@+id/pGenero"
-        android:scrollHorizontally="true"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/spinnerShows" />
-
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -80,5 +71,15 @@
         android:layout_alignParentStart="true"
         android:layout_marginBottom="21dp"
         android:minWidth="25dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/pSynopsis"
+        android:textSize="20sp"
+        android:scrollHorizontally="true"
+        android:layout_height="70dp"
+        android:layout_below="@+id/pGenero"
+        android:layout_toEndOf="@+id/pDuracion"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
