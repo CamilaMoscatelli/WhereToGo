@@ -5,6 +5,7 @@
     android:id="@+id/activity_d_peliculas"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars = "vertical"
     tools:context="com.example.grupo8webir.WhereToGo.ui.dPeliculas">
 
     <include
@@ -20,11 +21,11 @@
         android:layout_height="200dp" />
 
     <TextView
-        android:text="Animales fantásticos y como encontrarlos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/pImagen"
         android:id="@+id/pTitulo"
+        android:layout_marginTop="22dp"
         android:layout_marginLeft="22dp"
         android:layout_marginRight="22dp"
         android:textSize="20sp"
@@ -33,18 +34,17 @@
         android:textStyle="normal|bold" />
 
     <TextView
-        android:text="130 minutos"
         android:layout_height="wrap_content"
         android:id="@+id/pDuracion"
         android:textSize="16sp"
         android:layout_marginLeft="22dp"
+        android:layout_marginRight="22dp"
         android:layout_below="@+id/pTitulo"
         android:layout_alignParentStart="true"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:textStyle="normal|bold" />
 
     <TextView
-        android:text="Familiar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/pGenero"
@@ -64,20 +64,23 @@
         android:textSize="18sp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:onClick="irAlMapa"/>
+        android:background="@color/PrimaryColor"
+        android:onClick="irAlMapa"
+        android:paddingLeft="15dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" />
 
     <TextView
-        android:text="En 1926 New Scamander se prepara para iniciar una excursión por todo el mundo en busca de una extraordinaria variedad de criaturas mágicas..."
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/pSynopsis"
         android:textSize="14sp"
         android:layout_marginLeft="22dp"
         android:layout_marginRight="22dp"
-        android:layout_below="@+id/pGenero"
         android:scrollHorizontally="true"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/spinnerShows" />
+        android:layout_height="70dp"
+        android:layout_below="@+id/pGenero"
+        android:layout_toEndOf="@+id/pDuracion"
+        android:layout_alignParentStart="true" />
 
     <Spinner
         android:layout_width="match_parent"
@@ -87,7 +90,8 @@
         android:layout_marginRight="22dp"
         android:layout_above="@+id/pUbicacion"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="21dp"
+        android:layout_below="@id/pSynopsis"
+        android:layout_marginBottom="22dp"
         android:minWidth="25dp" />
 
 </RelativeLayout>

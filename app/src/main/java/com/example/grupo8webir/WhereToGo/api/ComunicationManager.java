@@ -28,10 +28,10 @@ public class ComunicationManager {
         return sInstance;
     }
 
-    public void getMovies() {
+    public void getMovies(String date, Integer hour, Integer price) {
         ApiInterface apiService = RestClient.getClient().create(ApiInterface.class);
 
-        Call<List<Event>> call = apiService.getMovies();
+        Call<List<Event>> call = apiService.getMovies(date, hour, price);
         call.enqueue(new Callback<List<Event>>() {
             @Override
             public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
@@ -48,10 +48,10 @@ public class ComunicationManager {
         });
     }
 
-    public void getPlays() {
+    public void getPlays(String date, Integer hour, Integer price) {
         ApiInterface apiService = RestClient.getClient().create(ApiInterface.class);
 
-        Call<List<Event>> call = apiService.getPlays();
+        Call<List<Event>> call = apiService.getPlays(date, hour, price, date, hour, price);
         call.enqueue(new Callback<List<Event>>() {
             @Override
             public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
@@ -68,10 +68,10 @@ public class ComunicationManager {
         });
     }
 
-    public void getConcerts() {
+    public void getConcerts(String date, Integer hour, Integer price) {
         ApiInterface apiService = RestClient.getClient().create(ApiInterface.class);
 
-        Call<List<Event>> call = apiService.getConcerts();
+        Call<List<Event>> call = apiService.getConcerts(date, hour, price);
         call.enqueue(new Callback<List<Event>>() {
             @Override
             public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
