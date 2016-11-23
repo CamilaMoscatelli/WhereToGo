@@ -32,6 +32,13 @@ public class Event {
         this.poster_url = poster_url;
     }
 
+    public Event(String title, String synopsis, String poster_url, List<Show> shows) {
+        this.title = title;
+        this.synopsis = synopsis;
+        this.poster_url = poster_url;
+        this.shows = shows;
+    }
+
     public Event(String title, String poster_url) {
         this.title = title;
         this.poster_url = poster_url;
@@ -91,5 +98,13 @@ public class Event {
 
     public void setSynopsis(String synopsis) {
         this.synopsis = synopsis;
+    }
+
+    public List<Show> getShows() {
+        return shows;
+    }
+
+    public void setShows(List<Show> shows) {
+        this.shows = shows;
     }
 }

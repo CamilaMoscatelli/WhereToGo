@@ -6,15 +6,15 @@ package com.example.grupo8webir.WhereToGo.model;
 public class Show {
 
     private String place;
-    private String date;
+    private String date_to_display;
     private String time_to_display;
     private Float lat;
     private Float longitud;
     private Integer price_cents;
 
-    public Show(String place, String date, String time_to_display, Float lat, Float longitud, Integer price_cents) {
+    public Show(String place, String date_to_display, String time_to_display, Float lat, Float longitud, Integer price_cents) {
         this.place = place;
-        this.date = date;
+        this.date_to_display = date_to_display;
         this.time_to_display = time_to_display;
         this.lat = lat;
         this.longitud = longitud;
@@ -37,12 +37,12 @@ public class Show {
         this.time_to_display = time_to_display;
     }
 
-    public String getDate() {
-        return date;
+    public String getDate_to_display() {
+        return date_to_display;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setDate_to_display(String date_to_display) {
+        this.date_to_display = date_to_display;
     }
 
     public Float getLat() {

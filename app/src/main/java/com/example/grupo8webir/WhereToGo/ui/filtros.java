@@ -28,6 +28,7 @@ import java.util.Calendar;
 
 public class filtros extends AppCompatActivity {
     SeekBar precio;
+    Integer selectedPrice = 0;
     Button fecha;
     Button horario;
     TextView fechaSelect;
@@ -69,7 +70,8 @@ public class filtros extends AppCompatActivity {
             {
                 //la Seekbar siempre empieza en cero, si queremos que el valor mínimo sea otro podemos modificarlo
                 precioSelect = (TextView) findViewById(R.id.precio);
-                precioSelect.setText("$ " +progress );
+                selectedPrice = progress;
+                precioSelect.setText("$ " + progress );
             }
 
             /**
@@ -157,9 +159,9 @@ public class filtros extends AppCompatActivity {
     public void goToResults(View view){
         spinner.setVisibility(View.VISIBLE);
         ComunicationManager cm = ComunicationManager.getInstance();
-        cm.getMovies();
-        cm.getConcerts();
-        cm.getPlays();
+        cm.getMovies((dia+"-"+mes+"-"+anio),hora,selectedPrice*100);
+        cm.getConcerts((dia+"-"+mes+"-"+anio),hora,selectedPrice*100);
+        cm.getPlays((dia+"-"+mes+"-"+anio),hora,selectedPrice*100);
     }
 
     public static void goToResultsIfLoaded(String fromEventType, ArrayList<Event> events) {

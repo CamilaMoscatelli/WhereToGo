@@ -18,11 +18,20 @@ import retrofit2.http.Query;
 
 public interface ApiInterface {
     @GET("movies")
-    Call<List<Event>> getMovies();
+    Call<List<Event>> getMovies(@Query("q[date_eq]") String date,
+                                @Query("q[hour_gt]") Integer hour,
+                                @Query("q[price_cents_lteq]") Integer price);
 
     @GET("theater")
-    Call<List<Event>> getPlays();
+    Call<List<Event>> getPlays(@Query("antel_q[date_eq]") String dateAntel,
+                               @Query("antel_q[hour_gt]") Integer hourAntel,
+                               @Query("antel_q[max_price_cents_lteq]") Integer priceAntel,
+                               @Query("movie_q[date_eq]") String dateMovie,
+                               @Query("movie_q[hour_gt]") Integer hourMovie,
+                               @Query("movie_q[max_price_cents_lteq]") Integer priceMovie);
 
     @GET("music")
-    Call<List<Event>> getConcerts();
+    Call<List<Event>> getConcerts(@Query("q[date_eq]") String date,
+                                  @Query("q[hour_gt]") Integer hour,
+                                  @Query("q[max_price_cents_lteq]") Integer price);
 }
